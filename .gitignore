@@ -79,3 +79,5 @@ typings/
 .fusebox/
 package.json.local
 package.json.save
+tmp/
+content/

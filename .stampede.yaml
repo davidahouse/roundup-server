@@ -14,7 +14,7 @@ pullrequests:
       - id: prcomment
 
 branches:
-  master:
+  main:
     tasks:
       - id: lines-of-code
         config:

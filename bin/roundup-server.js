@@ -16,6 +16,9 @@ const conf = require("rc")("roundup", {
   webPort: 9339,
   // Logging
   logLevel: "info",
+  // paths
+  tmpFolder: null,
+  contentFolder: null,
 });
 
 // Configure winston logging
