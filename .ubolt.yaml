@@ -1,0 +1,17 @@
+newversion:
+  commands:
+    - npm --no-git-tag-version version $1
+    - npm install
+  description: Update the package.json with a new version
+version:
+  command: npm view roundup-server version
+  description: Show the current version of the package
+runlocal:
+  command: bin/roundup-server.js --config .rounduprc-local
+  description: Run the roundup server locally
+dockerpush:
+  commands:
+    - docker build -t davidahouse/roundup-server .
+    - docker push davidahouse/roundup-server
+    - docker build -t davidahouse/roundup-server:$1 .
+    - docker push davidahouse/roundup-server:$1
