@@ -23,6 +23,16 @@ function method() {
  * @param {*} dependencies
  */
 async function handle(req, res, dependencies) {
+  if (req.files == null || req.files.file == null) {
+    res.send("Missing file upload");
+    return;
+  }
+
+  if (req.body == null || req.body.contentPath == null) {
+    res.send("Missing contentPath");
+    return;
+  }
+
   if (req.files.file != null && req.body.contentPath != null) {
     const incomingFile = req.files.file;
     const dir = dependencies.serverConfig.contentFolder + req.body.contentPath;
